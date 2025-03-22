@@ -1,0 +1,42 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Download Apache Kafka archive
+      get_url:
+        url: https://archive.apache.org/dist/kafka/4.0.0/kafka-4.0.0-src.tgz  # Заменит на нужную версию и тип архива
+        dest: /tmp/kafka.tgz
+      #delegate_to: localhost # на целевой машине 
+
+    - name: Create directory for unpacked archive
+      file:
+        path: /kafka
+        state: directory
+        mode: 0755
+     # delegate_to: localhost  # на целевой машине 
+
+    - name: Unpack Apache Kafka archive
+      unarchive:
+        src: /tmp/kafka.tgz
+        dest: /kafka
+        remote_src: yes
+     # delegate_to: localhost  # на целевой машине 
+
+   # - name: Remove downloaded archive
+   #   file:
+    #    path: /tmp/kafka.tgz
+     #   state: absent  # Указывает, что файл должен быть удалён.
+     # delegate_to: localhost # на целевой машине 
+    - name: del tar
+      tags: delete
+      file:
+        path: /tmp/kafka.tgz
+        state: absent  # Указывает, что файл должен быть удалён.
+       # remote_src: yes
+   
+    - name: Delete content & directory
+      tags: delete
+      ansible.builtin.file:
+        state: absent
+        path: /kafka
+       # remote_src: yes

@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: true
+  vars:
+    motd_message: "Добро пожаловать на наш сервер! Сегодня {{ lookup('pipe', 'date') }}."  # Используем переменную и функцию lookup для даты
+
+  tasks:
+    - name: Set custom MOTD message
+      blockinfile:
+        path: /etc/motd
+        create: yes
+        block: |
+          {{ motd_message }}

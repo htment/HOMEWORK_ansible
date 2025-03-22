@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  #  - name: Install tuned
+  #    yum:
+  #      name: tuned
+  #      state: present
+  #    when: ansible_pkg_mgr == 'yum'
+
+    - name: Install tuned (apt)
+      apt:
+        name: tuned
+        state: present
+      when: ansible_pkg_mgr == 'apt'
+
+    - name: Enable and start tuned
+      service:
+        name: tuned
+        state: started
+        enabled: yes
