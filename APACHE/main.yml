@@ -2,4 +2,10 @@
 - hosts: all
   become: true
   roles:
-    - role: webserver_setup
+    - webserver_setup
+
+  tasks:
+  - name: Debug - Print OS Family and Distribution
+    debug:
+      msg: "OS Family: {{ ansible_os_family }}, Distribution: {{ ansible_distribution }}"
+    

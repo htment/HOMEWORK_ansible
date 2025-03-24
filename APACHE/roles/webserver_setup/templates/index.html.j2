@@ -4,11 +4,11 @@
   <title>Server Information</title>
 </head>
 <body>
-  <h1>Server Information</h1>
-  <p>Hostname: {{ ansible_hostname }}</p>
-  <p>IP Address: {{ ansible_default_ipv4.address }}</p>
-  <p>CPU: {{ ansible_processor }}</p>
-  <p>RAM: {{ ansible_memtotal_mb }} MB</p>
-  <p>First HDD Size: {{ ansible_devices['sda'].size }}</p>  
+  <h1><b>Server Information</h1>
+  <p><b>Hostname: </b> {{ ansible_hostname }}</p>
+  <p>IP Address:</b> {{ ansible_default_ipv4.address }}</p>
+  <p><b>CPU:</b> {{ ansible_processor }}</p>
+  <p><b>RAM:</b> {{ ansible_memtotal_mb }} MB</p><br>
+  <p><b>First HDD Size:</b> {{ ansible_devices['sda'].size }}</p> 
 </body>
 </html>
