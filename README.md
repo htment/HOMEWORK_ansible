@@ -16,3 +16,12 @@
 2. https://github.com/htment/HOMEWORK_ansible/tree/main/KAFKA
 3. https://github.com/htment/HOMEWORK_ansible/tree/main/Изменение%20приветствия%20системы%20(MOTD)
 
+### Задание 2
+
+**Выполните действия, приложите файлы с модифицированным плейбуком и вывод выполнения.** 
+
+Модифицируйте плейбук из пункта 3, задания 1. В качестве приветствия он должен установить IP-адрес и hostname управляемого хоста, пожелание хорошего дня системному администратору. 
+
+
+**Ответ**
+https://github.com/htment/HOMEWORK_ansible/tree/main/asibele_facts
