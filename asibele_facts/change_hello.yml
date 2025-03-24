@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  gather_facts: true # Необходимо для доступа к фактам системы
+
+  vars:
+    motd_message: |
+      Добро пожаловать на наш сервер!
+      Сегодня {{ lookup('pipe', 'date') }}.
+      Hostname: {{ ansible_hostname }}
+      IP-адрес: {{ ansible_default_ipv4.address }}
+      Желаю хорошего дня, системному администратору!
+
+
+  tasks:
+    - name: Set custom MOTD message
+      blockinfile:
+        path: /etc/motd
+        create: yes
+        block: |
+          {{ motd_message }}
