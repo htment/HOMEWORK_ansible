@@ -10,3 +10,8 @@
     name: httpd
     state: restarted
   when: ansible_os_family == "RedHat"
+
+- name: Debug - Print OS Family and Distribution
+  debug:
+    msg: "OS Family: {{ ansible_os_family }}, Distribution: {{ ansible_distribution }}"
+    
