@@ -16,6 +16,8 @@
 2. https://github.com/htment/HOMEWORK_ansible/tree/main/KAFKA
 3. https://github.com/htment/HOMEWORK_ansible/tree/main/Изменение%20приветствия%20системы%20(MOTD)
 
+4. ![screen_MOTD](https://github.com/htment/HOMEWORK_ansible/blob/main/Изменение%20приветствия%20системы%20(MOTD)/img/Change_MOTD.png)
+
 ### Задание 2
 
 **Выполните действия, приложите файлы с модифицированным плейбуком и вывод выполнения.** 
