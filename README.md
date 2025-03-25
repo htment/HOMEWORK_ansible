@@ -58,5 +58,5 @@ https://github.com/htment/HOMEWORK_ansible/tree/main/asibele_facts
 **ОТВЕТ**
 
 https://github.com/htment/HOMEWORK_ansible/tree/main/APACHE
-
-![INSTALL APACHE](https://github.com/htment/HOMEWORK_ansible/blob/main/APACHE/img/ansible-playbook%20main.yml.png?raw=true)
+2. [мой play-book APACHE]https://drive.google.com/drive/folders/1aGtlAKMIT4cWFR0EQFB_ml00DfTuf2Ao?usp=sharing
+3. ![INSTALL APACHE](https://github.com/htment/HOMEWORK_ansible/blob/main/APACHE/img/ansible-playbook%20main.yml.png?raw=true)
