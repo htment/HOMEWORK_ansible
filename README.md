@@ -13,6 +13,8 @@
 
 **ОТВЕТ**
 1. https://github.com/htment/HOMEWORK_ansible/tree/main/INSTALL_and_AUTORUN
+
+![screen insall](https://github.com/htment/HOMEWORK_ansible/blob/main/INSTALL_and_AUTORUN/img/install_tuned.png)
 2. https://github.com/htment/HOMEWORK_ansible/tree/main/KAFKA
 3. https://github.com/htment/HOMEWORK_ansible/tree/main/Изменение%20приветствия%20системы%20(MOTD)
 
