@@ -1,0 +1,5 @@
+Добро пожаловать на наш сервер!
+Сегодня {{ lookup('pipe', 'date +%Y-%m-%d') }}.
+Hostname: {{ ansible_hostname }}
+IP-адрес: {{ ansible_default_ipv4.address }}
+Желаю хорошего дня, системному администратору!

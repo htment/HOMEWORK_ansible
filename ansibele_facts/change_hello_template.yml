@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Set custom MOTD message using template
+      template:
+        src: motd.j2
+        dest: /etc/motd
+        mode: '0644'
+
