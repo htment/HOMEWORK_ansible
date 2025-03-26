@@ -59,7 +59,7 @@ https://github.com/htment/HOMEWORK_ansible/tree/main/ansibele_facts
 
 **ОТВЕТ**
 
-[Git-play-book APACHE](https://github.com/htment/HOMEWORK_ansible/tree/main/APACHE)
+1. [Git-play-book APACHE](https://github.com/htment/HOMEWORK_ansible/tree/main/APACHE)
 
 2. [мой play-book APACHE](https://drive.google.com/drive/folders/1aGtlAKMIT4cWFR0EQFB_ml00DfTuf2Ao?usp=sharing)
 3. ![INSTALL APACHE](https://github.com/htment/HOMEWORK_ansible/blob/main/APACHE/img/ansible-playbook%20main.yml.png?raw=true)
