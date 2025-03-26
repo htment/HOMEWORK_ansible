@@ -25,7 +25,7 @@
 
 
 **ОТВЕТ**
-https://github.com/htment/HOMEWORK_ansible/tree/main/asibele_facts
+https://github.com/htment/HOMEWORK_ansible/tree/main/ansibele_facts
 
 
 ![screen_MOTD](https://github.com/htment/HOMEWORK_ansible/blob/main/Изменение%20приветствия%20системы%20(MOTD)/img/Change_MOTD.png)
