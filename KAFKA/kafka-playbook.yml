@@ -22,11 +22,7 @@
         remote_src: yes
      # delegate_to: localhost  # на целевой машине 
 
-   # - name: Remove downloaded archive
-   #   file:
-    #    path: /tmp/kafka.tgz
-     #   state: absent  # Указывает, что файл должен быть удалён.
-     # delegate_to: localhost # на целевой машине 
+
     - name: del tar
       tags: delete
       file:
