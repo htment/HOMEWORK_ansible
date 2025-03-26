@@ -14,7 +14,19 @@
         state: present
       when: ansible_pkg_mgr == 'apt'
 
-    - name: Enable and start tuned
+    - name: Run the equivalent of "apt-get update" as a separate step
+      apt:
+        update_cache: yes
+    
+    - name: Remove tuned # при удалении " ansible-playbook install.yml -t remove " 
+      tags: remove
+      apt:
+        name: tuned
+        state: absent
+      
+       
+
+    - name: Enable and start tuned 
       service:
         name: tuned
         state: started
