@@ -33,19 +33,35 @@
     enabled: yes
   when: ansible_os_family == "RedHat"
 
-- name: Open port 80
-  ufw:
-    rule: allow
-    port: 80
-    proto: tcp
-  when: ansible_distribution != 'CentOS' and ansible_distribution != 'Red Hat Enterprise Linux Server' and ansible_distribution != 'Fedora' # UFW not installed by default in some RHEL-based distros, check it before running
+#- name: Open port 80
+#  ufw:
+#    rule: allow
+#    port: 80
+#    proto: tcp
+#  when: ansible_distribution != 'CentOS' and ansible_distribution != 'Red Hat Enterprise Linux Server' and ansible_distribution != 'Fedora' # UFW not installed by default in some RHEL-based distros, check it before running
 
 - name: Check website availability
   uri:
     url: http://{{ ansible_host }}
     status_code: 200
-    retries: 3
-    delay: 5
+    #retries: 3
+    #delay: 5
+  register: website_status  # Сохраняем результат проверки
+    
+- name: Wait for website to become available
+  wait_for:
+    timeout: 60
+    state: started
+    port: 80
+  when: website_status.failed
 
+- name: Debug
+  debug: 
+    msg: "{{ website_status.status }}"
+
+- name: Fail if website is not reachable
+  fail:
+    msg: "Website is not reachable!"
+  when: website_status is failed
 
 

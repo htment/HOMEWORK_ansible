@@ -9,3 +9,8 @@
     debug:
       msg: "OS Family: {{ ansible_os_family }}, Distribution: {{ ansible_distribution }}"
     
+ # - name: remove
+ #   apt:
+ #     name: apache2
+ #     state: absent
+ #   tags: remove
