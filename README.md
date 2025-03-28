@@ -65,5 +65,5 @@ https://github.com/htment/HOMEWORK_ansible/tree/main/ansibele_facts
 
 2. [мой play-book APACHE НА GOOGLE DRIVE](https://drive.google.com/drive/folders/1aGtlAKMIT4cWFR0EQFB_ml00DfTuf2Ao?usp=sharing)
 3. ![INSTALL APACHE](https://github.com/htment/HOMEWORK_ansible/blob/main/APACHE/img/ansible-playbook%20main.yml.png?raw=true)
-ошибка возникает из-за того что на хосте не используется ufw.  Добавление правила ufw можно закомменитировать в tasks
+
 4. ![SCREEN_PAGE](https://github.com/htment/HOMEWORK_ansible/blob/main/APACHE/img/screen_page_server.png)
