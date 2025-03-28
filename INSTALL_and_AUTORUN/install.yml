@@ -2,32 +2,31 @@
 - hosts: all
   become: true
   tasks:
-  #  - name: Install tuned
-  #    yum:
-  #      name: tuned
-  #      state: present
-  #    when: ansible_pkg_mgr == 'yum'
-
     - name: Install tuned (apt)
       apt:
         name: tuned
+        update_cache: yes
         state: present
       when: ansible_pkg_mgr == 'apt'
 
-    - name: Run the equivalent of "apt-get update" as a separate step
-      apt:
-        update_cache: yes
-    
-    - name: Remove tuned # при удалении " ansible-playbook install.yml -t remove " 
-      tags: remove
-      apt:
-        name: tuned
-        state: absent
-      
-       
-
-    - name: Enable and start tuned 
+    - name: Enable and start tuned
       service:
         name: tuned
         state: started
         enabled: yes
+
+    - name: Check tuned status
+      shell: systemctl status tuned
+      register: tuned_status
+      
+
+    - name: DEBUG tuned status
+      debug:
+        msg: "{{ tuned_status.stdout_lines }}"
+    
+    #Если надо удалить пакет
+   # - name: remove tuned
+   #   apt: 
+   #     name: tuned
+   #     state: absent 
+   #   tags: remove 
