@@ -1,6 +1,8 @@
 ---
-process_exporter_version: "0.6.0"
-process_exporter_url: "https://github.com/ncabatoff/process-exporter/releases/download/v{{ process_exporter_version }}/process-exporter-{{ process_exporter_version }}.linux-amd64.tar.gz"
+#process_exporter_version: "0.6.0"
+process_exporter_version: "0.8.5"
+#process_exporter_url: "https://github.com/ncabatoff/process-exporter/releases/download/v{{ process_exporter_version }}/process-exporter-{{ process_exporter_version }}.linux-amd64.tar.gz"
+process_exporter_url: https://github.com/ncabatoff/process-exporter/releases/download/v0.8.5/process-exporter-0.8.5.linux-386.tar.gz
 process_exporter_user: "process_exporter"
 process_exporter_group: "process_exporter"
 process_exporter_service_file: "/usr/lib/systemd/system/process_exporter.service"

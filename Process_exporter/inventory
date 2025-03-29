@@ -12,7 +12,7 @@ ansible_become_pass=123
 #192.168.31.112 ansible_host=192.168.31.112 ansible_user=art ansible_password=123
 #192.168.31.150 ansible_user=art ansible_ssh_password=123 ansible_become_pass=123
 #192.168.31.124
-192.168.31.116 ansible_ssh_user=art
+192.168.31.125 ansible_ssh_user=art
 
 [servers]
-192.168.31.125 ansible_ssh_user=art
+192.168.31.112 ansible_ssh_user=art

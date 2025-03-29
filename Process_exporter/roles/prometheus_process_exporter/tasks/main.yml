@@ -30,19 +30,24 @@
     remote_src: yes
 
 - name: List contents of unpacked directory
-  command: ls -l /tmp/process-exporter-{{ process_exporter_version }}.linux-amd64
+  command: ls -l /tmp/process-exporter-{{ process_exporter_version }}.linux-386
   register: unpacked_files
 
 - debug:
     var: unpacked_files.stdout_lines
 
 - name: Move Process Exporter binary
-  copy:
-    src: "/tmp/process-exporter-{{ process_exporter_version }}.linux-amd64/process-exporter"
-    dest: "/usr/bin/process-exporter"
-    owner: "{{ process_exporter_user }}"
-    group: "{{ process_exporter_group }}"
-    mode: '0755'
+  command: mv /tmp/process-exporter-{{ process_exporter_version }}.linux-386/process-exporter /usr/bin/process-exporter
+  args:
+    creates: /usr/bin/process-exporter
+
+#- name: Move Process Exporter binary
+#  copy:
+#    src: "/tmp/process-exporter-{{ process_exporter_version }}.linux-amd64/process-exporter"
+#    dest: "/usr/bin/process-exporter"
+#    owner: "{{ process_exporter_user }}"
+#    group: "{{ process_exporter_group }}"
+#    mode: '0755'
 
 # Следующие задачи остаются без изменений
 - name: Configure Process Exporter
