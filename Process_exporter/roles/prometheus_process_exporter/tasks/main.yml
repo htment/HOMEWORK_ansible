@@ -30,14 +30,15 @@
     remote_src: yes
 
 - name: List contents of unpacked directory
-  command: ls -l /tmp/process-exporter-{{ process_exporter_version }}.linux-386
+  #command: ls -l /tmp/process-exporter-{{ process_exporter_version }}.linux-386
+  command: ls -l /tmp/process-exporter-{{ process_exporter_version }}.{{ process_exporter_Linux }}
   register: unpacked_files
 
 - debug:
     var: unpacked_files.stdout_lines
 
 - name: Move Process Exporter binary
-  command: mv /tmp/process-exporter-{{ process_exporter_version }}.linux-386/process-exporter /usr/bin/process-exporter
+  command: mv /tmp/process-exporter-{{ process_exporter_version }}.{{ process_exporter_Linux }}/process-exporter /usr/bin/process-exporter
   args:
     creates: /usr/bin/process-exporter
 
@@ -49,14 +50,20 @@
 #    group: "{{ process_exporter_group }}"
 #    mode: '0755'
 
-# Следующие задачи остаются без изменений
-- name: Configure Process Exporter
-  template:
-    src: process-exporter.yaml.j2
+
+#- name: Configure Process Exporter
+#  template:
+#    src: process-exporter.yaml.j2
+#    dest: "{{ process_exporter_config_file }}"
+#    owner: "{{ process_exporter_user }}"
+#    group: "{{ process_exporter_group }}"
+#    mode: '0644'
+- name: Copy Config
+  copy:
     dest: "{{ process_exporter_config_file }}"
-    owner: "{{ process_exporter_user }}"
-    group: "{{ process_exporter_group }}"
-    mode: '0644'
+    src: ./templates/process-exporter.yaml
+    
+
 
 - name: Create Process Exporter systemd service
   copy:
